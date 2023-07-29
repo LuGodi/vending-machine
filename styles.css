@@ -10,10 +10,46 @@
     flex-wrap:wrap;
   }
   .item {
-    background-color:green;
+    background-color:white;
     width:20%;
     height:auto;
     padding:10px;
+    overflow:hidden;
+    position:relative;
+    
+
     
   }
-  
+
+  .item > span {
+    cursor:default;    
+    position:absolute;
+    margin: 0 10px;
+    top:100px;
+    z-index:1;
+    pointer-events: none;
+    /* animation: 3s 1 normal restockAnimation;
+   */
+
+  }
+  .animate {
+    animation: 3s 1 normal buyAnimation, 3s 1 normal 3s restockAnimation;
+  }
+
+  @keyframes buyAnimation {
+    from {
+        top:100px;
+    }
+    to{
+        top:130px;
+    }
+
+  }
+  @keyframes restockAnimation {
+    from {
+        top: -20px;
+    }
+    to {
+        top:100px;
+    }
+  }
