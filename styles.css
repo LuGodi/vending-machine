@@ -5,7 +5,7 @@ body {
 margin:60px;
 }
 .machine {
-    background-color:purple;
+    background-color:#bd33bd;
     border-radius:6px;
     height:400px;
     width:200px;
@@ -16,14 +16,17 @@ margin:60px;
     flex-wrap:wrap;
   
     justify-content: space-around;
+    border:2px solid black;
   }
   .item {
-    background-color:white;
+    background-color:#b882c3;
     width:20%;
     height:20%; /*20%*/
     padding:10px;
     overflow:hidden;
     position:relative;
+    border:2px solid black;
+    border-radius: 6px;
     
 
     
@@ -37,7 +40,8 @@ margin:60px;
     z-index:1;
     pointer-events: none;
     font-size:x-large;
-    transform:translateY(60px)
+    transform:translateY(60px);
+
 
     /* animation: 3s 1 normal restockAnimation;
    */
