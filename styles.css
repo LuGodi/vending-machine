@@ -1,5 +1,10 @@
+* {
+  box-sizing: border-box;
+
+}
 body {
   background-color: #23212b;
+
 }
 .container {
 margin:60px;
@@ -22,7 +27,7 @@ margin:60px;
     background-color:#b882c3;
     width:20%;
     height:20%; /*20%*/
-    padding:10px;
+ 
     overflow:hidden;
     position:relative;
     border:2px solid black;
@@ -35,12 +40,12 @@ margin:60px;
   .item > span {
     cursor:default;    
     position:absolute;
-    margin: 0 10px;
+    margin: 0;
   
     z-index:1;
     pointer-events: none;
     font-size:x-large;
-    transform:translateY(60px);
+    transform:translateY(20px);
 
 
     /* animation: 3s 1 normal restockAnimation;
@@ -70,16 +75,26 @@ margin:60px;
 
     
   }
-  .panel-span-container{
-    display:flex;
-    gap:100px;
-    transform: translateX(160px);
-    animation: 10s linear infinite panelAnimation;
+.panel-span-container{
+  display:flex;
+  gap:100px;
+  transform: translateX(160px);
+  animation: 10s linear infinite panelAnimation;
+}
+.painel > span {
+  font-size:larger;
+  
+    }
+
+.prize { 
+  animation:2s 1 normal restockAnimation;
+  animation-fill-mode: forwards;
   }
-  .painel > span {
-    font-size:larger;
-    
-     }
+
+.remove-prize-animation {
+  animation: 3s 1 normal removePrizeAnimation ;
+  animation-fill-mode: forwards;
+}
   @keyframes buyAnimation {
     from {
        
@@ -94,7 +109,7 @@ margin:60px;
        transform:translateY(-80px)
     }
     to {
-       transform:translateY(60px);
+       transform:translateY(20px);
     }
   }
 
@@ -104,5 +119,16 @@ margin:60px;
     }
     to {
       transform:translateX(-1004px)
+    }
+  }
+
+  @keyframes removePrizeAnimation {
+    from {
+      transform:translateY(20px)
+
+    }
+    to {
+      transform:translateX(200px) translateY(20px)
+      
     }
   }

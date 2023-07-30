@@ -1,16 +1,32 @@
 let items = document.getElementsByClassName("item");
-console.log(items);
+
+let prizeSlot = document.querySelector(".prize-slot");
 
 for (let element of items) {
   element.addEventListener("click", (e) => {
     let currentElement = e.target;
-    let foodIcon = e.target.firstChild;
+    let foodContainer = e.target.firstChild;
     currentElement.style.pointerEvents = "none";
-    console.log(e.target.textContent);
-    foodIcon.classList.add("animate");
+
+    foodContainer.classList.add("animate");
+    let prizeElement = createPrize(foodContainer);
     let timeout = setTimeout(() => {
-      foodIcon.classList.remove("animate");
+      foodContainer.classList.remove("animate");
+      removePrize(prizeElement);
       currentElement.style.pointerEvents = "";
     }, 3000);
   });
+}
+
+function createPrize(foodContainer) {
+  let prizeSpanElement = document.createElement("span");
+  prizeSpanElement.textContent = foodContainer.textContent;
+  prizeSpanElement.className = "prize";
+  prizeSlot.appendChild(prizeSpanElement);
+  return prizeSpanElement;
+}
+
+function removePrize(prizeElement) {
+  prizeElement.classList.add("remove-prize-animation");
+  setTimeout(() => prizeSlot.removeChild(prizeElement), 3000);
 }
