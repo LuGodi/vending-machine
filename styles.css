@@ -6,8 +6,10 @@
     margin: 0 auto;
     display:flex;
     padding:10px;
-    gap:10px;
+    gap:4px;
     flex-wrap:wrap;
+  
+    justify-content: space-around;
   }
   .item {
     background-color:white;
@@ -25,61 +27,67 @@
     cursor:default;    
     position:absolute;
     margin: 0 10px;
-    top:80px;
+  
     z-index:1;
     pointer-events: none;
+    font-size:x-large;
+    transform:translateY(60px)
     /* animation: 3s 1 normal restockAnimation;
    */
 
   }
   .animate {
     animation: 2s 1 normal buyAnimation, 2s 1 normal 1s restockAnimation;
+    pointer-events: none;
   }
 
-  .painel {
+  .panel {
     flex-grow:1;
     flex-basis:100%;
-    background-color:white;
-    /* display:flex;
-    gap:100px; */
+    background-color:#9c27b0;
+
     overflow: hidden;
-    position:relative;
+
     align-items: center;
 
-    margin:8px;
+    margin:8px 0;
     padding-left:15px;
+    display:flex;
+    align-items: center;
+  
+    align-self:center;
 
     
   }
-  .painel-span-container{
+  .panel-span-container{
     display:flex;
     gap:100px;
     transform: translateX(160px);
-    animation: 10s linear infinite painelAnimation;
+    animation: 10s linear infinite panelAnimation;
   }
   .painel > span {
-
+    font-size:larger;
     
      }
   @keyframes buyAnimation {
     from {
-        top:80px;
+       
     }
     to{
-        top:130px;
+      transform:translateY(100px)
     }
 
   }
   @keyframes restockAnimation {
     from {
-        top: -20px;
+       transform:translateY(-80px)
     }
     to {
-        top:80px;
+       transform:translateY(60px);
     }
   }
 
-  @keyframes painelAnimation {
+  @keyframes panelAnimation {
     from {
       transform: translateX(160px);
     }

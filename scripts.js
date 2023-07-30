@@ -7,6 +7,6 @@ for (let element of items) {
     let foodIcon = e.target.firstChild;
     console.log(e.target.textContent);
     foodIcon.classList.add("animate");
-    setTimeout(() => foodIcon.classList.remove("animate"), 6000);
+    let timeout = setTimeout(() => foodIcon.classList.remove("animate"), 3000);
   });
 }
